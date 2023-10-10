@@ -1,1 +1,32 @@
+name: Run Tests
+
+on:
+  push:
+    branches:
+      - main # Основна гілка проекту
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        python-version: [3.8, 3.9] # Версії Python, які нам потрібні
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    
+    - name: Install Dependencies
+      run: |
+        pip install -r requirements.txt # Команда для встановлення залежностей з проекту
+
+    - name: Run Tests
+      run: |
+        python -m unittest discover tests # Команда для запуску тестів
 
