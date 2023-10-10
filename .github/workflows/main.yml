@@ -28,5 +28,5 @@ jobs:
 
     - name: Run Tests
       run: |
-        python -m unittest discover tests # Команда для запуску тестів
+        python -m unittest discover test # Команда для запуску тестів
 
