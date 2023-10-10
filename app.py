@@ -18,8 +18,7 @@ def curent_time():
   
   # Повертаємо JSON-рядок
   return{
-    'statusCode': 200,
-    'body': f'<h>Поточний час: {time_str}</h>'
+    f'<h>Current time: {time_str}</h>'
   }
 
   
