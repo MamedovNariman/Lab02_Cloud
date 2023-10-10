@@ -16,11 +16,10 @@ def curent_time():
   # Створюємо рядок з годинами та хвилинами у форматі "гг:хх"
   time_str = f"{current_hour:02d}:{current_minute:02d}"
   
-  # Створюємо словник для JSON
-  time_data = {
+  # Повертаємо JSON-рядок
+  return{
     'statusCode': 200,
-    'body': f'Поточний час: {time_str}'
+    'body': f'<h>Поточний час: {time_str}</h>'
   }
 
-  # Повертаємо JSON-рядок
-  return time_data
+  
